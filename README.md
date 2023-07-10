@@ -11,3 +11,6 @@
 ## 기본 입출력 연습
 [소스코드 : DATA_INPUT_EX2.py 실행 완료](https://github.com/20dlwnsrhkd/Python/blob/main/Day1/DATA_INPUT_EX2.py)
 다양한 함수를 함쳐서 한 줄로 최적화 하는 것을 배웠다.
+
+## 값 변환/ 연산자 연습
+[]
