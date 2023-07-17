@@ -1,13 +1,3 @@
-def BFS(x,y,L):
-
-    for i in range(4): # 상하좌우 검사
-        nx = x+dx[i]
-        ny = y+dy[i]
-
-        if 0<=nx<n and 0<=ny<n and arr[nx][ny]==1: # 새로운 집 발견
-            arr[nx][ny]=0
-            cnt_arr[L]+=1 # 다음 좌표 설정
-            BFS(nx,ny,L) # DFS 재귀 호출
 from collections import deque
             
 n = int(input('단지의 크기 N를 입력 : '))
@@ -25,7 +15,7 @@ for i in range(n): # 반복문 시작
         if arr[i][j]==1:
             q.append((i, j)) # 초기 방문 노드 큐에 추가
             arr[i][j]=0
-            cnt=1
+            cnt=1 #새로운 집이 발견 될 때마다 개수 초기화
             while q: # 큐가 존재하는 동안 루프 동작
                 x,y=q.popleft() # 큐의 현재 노드를 꺼내고
                 for z in range(4):
@@ -35,7 +25,7 @@ for i in range(n): # 반복문 시작
                         arr[nx][ny] = 0
                         cnt+=1 # 집의 개수를 증가
                         q.append((nx,ny)) # 큐에 노드 추가
-            cnt_arr.append(1)
+            cnt_arr.append(cnt)
 
 print('총 단지수 :', len(cnt_arr))
 cnt_arr.sort() 
