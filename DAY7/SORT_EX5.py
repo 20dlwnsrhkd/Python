@@ -1,4 +1,22 @@
-from bisect import bisect_left, bisect_right
+import sys, bisect
+
+si = sys.stdin.readline
+n = int(si())
+store=sorted(map(int, si().split()))
+m = int(si())
+wish=list(map(int, si().split()))
+
+for x in wish:
+    idx = bisect.bisect_left(store,x)
+    
+    if store[idx] == x:
+        print('yes',end=' ')
+    else:
+        print('no',end=' ')
+
+
+
+'''from bisect import bisect_left, bisect_right
 
 def count_by_value(array,k):
     left_index = bisect_left(array, x)
@@ -20,5 +38,4 @@ for i in range(m):
     
 for i in range(m): 
     count = count_by_value(jong, k[i])
-    print(count,end='')
-    
+    print(count,end='') '''
